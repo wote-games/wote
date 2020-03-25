@@ -14,21 +14,21 @@ function randomIntRange(min, max) {
 // parse a dice string
 function parse(diceString) {
 	const match = pattern.exec(diceString);
-	if (!match) {
+	if (!match || match.length < 3) {
 		throw new Error(`invalid dice string "${diceString}"`);
 	}
-
+	
 	return {
 		num: parseInt(match[1]),
 		type: parseInt(match[2]),
-		bonus: match.length > 3 ? parseInt(match[3]) : 0
+		bonus: match[3] ? parseInt(match[3]) : 0
 	};
 }
 
 // roll a number of the same type of dice
 function roll(num, type, bonus=0) {
 	let sum = bonus;
-	for (let r = 0; r < num; num++) {
+	for (let d = 0; d < num; d++) {
 		sum += randomIntRange(1, type);
 	}
 	return sum;
@@ -52,6 +52,7 @@ function disadvantage(num, type, bonus) {
 
 exports.pattern = pattern;
 exports.schema = schema;
+exports.parse = parse;
 exports.randomIntRange = randomIntRange;
 exports.roll = roll;
 exports.percentage = percentage;
