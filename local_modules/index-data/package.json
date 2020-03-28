@@ -1,0 +1,22 @@
+{
+  "name": "@local/index-data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "@local/dice": "^1.0.0",
+    "@local/enums": "^1.0.0",
+    "@local/flags": "^1.0.0",
+    "@local/id": "^v1.0.0",
+	"@local/logger": "^1.0.0",
+	"@local/linked-list": "^1.0.0",
+    "jsonschema": "^1.2.5"
+  }
+}

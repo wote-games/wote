@@ -52,12 +52,10 @@ class EnumTable {
 	get name() {return this._name;}
 	get values() {return this._arrayValues;}
 	get default() {return this.values[0];}
-	get schema() {
-		return {
-			title: `${this.name} enum values`,
-			type: 'string',
-			enum: this.values
-		};
+	get schema() {return {
+		title: `${this.name} enum values`,
+		type: 'string',
+		enum: this.values};
 	}
 
 	has(value) {return this._values.has(value);}
