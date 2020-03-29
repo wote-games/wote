@@ -1,0 +1,27 @@
+{
+  "name": "wote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "export NODE_ENV=testing; nyc --reporter=lcov mocha \"local_modules/**/test/*.spec.js\"",
+    "codecov": "codecov"
+  },
+  "keywords": [],
+  "author": "Jesse Howard <jessechoward@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "local_modules/*"
+  ],
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "codecov": "^3.6.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "jsonschema": "^1.2.5",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "supertest": "^4.0.2"
+  }
+}
